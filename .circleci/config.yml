@@ -17,10 +17,6 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - run: return 1
-  my_error_handling_job:
-    docker: 
-      - image: circleci/node:13.8.0
-    steps:
       - run: 
           name: handling error
           command: echo "Hello ERROR :)"
