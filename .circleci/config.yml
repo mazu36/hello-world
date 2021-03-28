@@ -12,7 +12,7 @@ jobs:
       - image: circleci/node:13:8:0
     steps:
       - run: |
-        print ${message}
+          echo ${message}
   - print_world:
     environment:
       message: " World !"
@@ -20,7 +20,7 @@ jobs:
       - image: circleci/node:13:8:0
     steps:
       - run: |
-        print ${message}
+          echo ${message}
 # Orchestrate or schedule a set of jobs
 workflows:
   # Name the workflow "welcome"
