@@ -13,7 +13,7 @@ jobs:
       - run: 
           name: "Exercise to save a file for sharing"
           command: |
-            echo "Hello world " > output.txt
+            echo "Hello world " > /tmp/output.txt
       - persist_to_workspace:
           root: /tmp
           paths: 
