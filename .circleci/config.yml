@@ -12,6 +12,20 @@ orbs:
   # Declare a dependency on the welcome-orb
   welcome: circleci/welcome-orb@0.4.1
 jobs:
+  my_error_job:
+    docker: 
+      - image: circleci/node:13.8.0
+    steps:
+      - run: return 1
+  my_error_handling_job:
+    docker: 
+      - image: circleci/node:13.8.0
+    steps:
+      - run: 
+          name: handling error
+          command: echo "Hello ERROR :)"
+          when:  on_fail
+
   save_hello_world_output:
     docker: 
       - image: circleci/node:13.8.0
@@ -68,3 +82,4 @@ workflows:
       - save_hello_world_output
       - print_output_file:
           requires: [save_hello_world_output]
+      - my_error_job
